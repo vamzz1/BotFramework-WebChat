@@ -22,7 +22,7 @@ interface LocalizedStrings {
 
 const localizedStrings: LocalizedStrings = {
     'en-us': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Send",
         unknownFile: "[File of type '%1']",
         unknownCard: "[Unknown Card '%1']",
@@ -56,7 +56,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'nb-no': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Send",
         unknownFile: "[Fil av typen '%1']",
         unknownCard: "[Ukjent Kort '%1']",
@@ -73,7 +73,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'da-dk': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Send",
         unknownFile: "[Fil af typen '%1']",
         unknownCard: "[Ukendt kort '%1']",
@@ -90,7 +90,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'de-de': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Senden",
         unknownFile: "[Datei vom Typ '%1']",
         unknownCard: "[Unbekannte Card '%1']",
@@ -107,7 +107,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'pl-pl': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Wyślij",
         unknownFile: "[Plik typu '%1']",
         unknownCard: "[Nieznana karta '%1']",
@@ -141,7 +141,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'nl-nl': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Verstuur",
         unknownFile: "[Bestand van het type '%1']",
         unknownCard: "[Onbekende kaart '%1']",
@@ -192,7 +192,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'fr-fr': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Envoyer",
         unknownFile: "[Fichier de type '%1']",
         unknownCard: "[Carte inconnue '%1']",
@@ -209,7 +209,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'es-es': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Enviar",
         unknownFile: "[Archivo de tipo '%1']",
         unknownCard: "[Tarjeta desconocida '%1']",
@@ -243,7 +243,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'it-it': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Invia",
         unknownFile: "[File di tipo '%1']",
         unknownCard: "[Card sconosciuta '%1']",
@@ -311,7 +311,7 @@ const localizedStrings: LocalizedStrings = {
         speak: "講嘢"
     },
     'cs-cz': {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Odeslat",
         unknownFile: "[Soubor typu '%1']",
         unknownCard: "[Neznámá karta '%1']",
@@ -362,7 +362,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
     },
     'sv-se' : {
-        title: "Chatt",
+        title: "Free Credit Report",
         send: "Skicka",
         unknownFile: "[Filtyp '%1']",
         unknownCard: "[Okänt kort '%1']",
@@ -396,7 +396,7 @@ const localizedStrings: LocalizedStrings = {
         speak: ""
    },
    'pt-pt' : {
-        title: "Chat",
+        title: "Free Credit Report",
         send: "Enviar",
         unknownFile: "[Ficheiro do tipo \"%1\"]",
         unknownCard: "[Cartão Desconhecido \"%1\"]",
