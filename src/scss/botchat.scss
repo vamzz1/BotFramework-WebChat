@@ -33,6 +33,12 @@
         visibility: hidden;
     }
 
+    .wc-close-chat {
+        float: right;
+        height: 18px;
+        cursor: pointer;
+    }
+
     .wc-header {
         background-color: $c_brand;
         box-shadow: 0 1px $c_shadow;

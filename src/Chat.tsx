@@ -221,6 +221,7 @@ export class Chat extends React.Component<ChatProps, {}> {
         if (state.format.options.showHeader) header =
             <div className="wc-header">
                 <span>{ state.format.strings.title }</span>
+                <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-x.png" onClick={() => window.parent.postMessage('close-bot', '*')}/>
             </div>;
 
         let resize: JSX.Element;
