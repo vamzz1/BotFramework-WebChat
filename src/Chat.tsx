@@ -221,6 +221,8 @@ export class Chat extends React.Component<ChatProps, {}> {
         if (state.format.options.showHeader) header =
             <div className="wc-header">
                 <span>{ state.format.strings.title }</span>
+                <br/>
+                <span className="wc-header-subspan">No impact on score | Free Monthly Updates</span>
                 <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-x.png" onClick={() => window.parent.postMessage('close-bot', '*')}/>
             </div>;
 
