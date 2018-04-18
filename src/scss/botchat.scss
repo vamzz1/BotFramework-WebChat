@@ -41,6 +41,16 @@
         cursor: pointer;
     }
 
+    .wc-header-span {
+        font-size: 16px;
+    }
+
+    @media (max-width: 350px) {
+        .wc-header-span {
+            font-size: 14px;
+        }
+    }
+
     .wc-header-subspan {
         font-size: 12px;
     }
