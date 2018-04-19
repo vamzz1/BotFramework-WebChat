@@ -1,14 +1,16 @@
 $actionsHeight: 40px;
 $consoleHeight: 50px;
 
-$fontFamily: 'Roboto Slab',serif;
-$fontSize: 14px;
+$fontFamily: 'Open Sans', sans-serif;
+$fontSize: 12px;
+$lineHeight: 18px;
+$fontWeight: 400;
 
 $headerPaddingBottom: 0;
 $headerPaddingLeft: 16px;
 $headerPaddingRight: 8px;
 $headerPaddingTop: 10px;
-$headerTotalHeight: 64px;
+$headerTotalHeight: 70px;
 
 $actionTransition: .2s cubic-bezier(0,0,.5,1);
 

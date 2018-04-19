@@ -7,12 +7,15 @@
     body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
         font-family: $fontFamily;
         font-size: $fontSize;
+        line-height: $lineHeight;
+        font-weight: $fontWeight;
+
     }
 
     .wc-app button {
-        background-color: $c_brand;
-        border: 1px solid $c05;
-        border-radius: 8px;
+        // background-color: $c_brand;
+        border: 1px solid $c_brand;
+        border-radius: 4px;
         color: $c01;
         cursor: pointer;
         transition: color .2s ease, background-color .2s ease;
@@ -35,24 +38,15 @@
 
     .wc-close-chat {
         float: right;
-        height: 18px;
+        height: 16px;
         position: relative;
-        top: -14px;
+        top: 0px;
         cursor: pointer;
     }
 
     .wc-header-span {
-        font-size: 16px;
-    }
-
-    @media (max-width: 350px) {
-        .wc-header-span {
-            font-size: 14px;
-        }
-    }
-
-    .wc-header-subspan {
-        font-size: 12px;
+        float: left;
+        font-weight: 400;
     }
 
     .wc-header {
@@ -61,8 +55,8 @@
         box-sizing: content-box;
         color: $c01;
         font-weight: 700;
-        font-size: 20px;
-        height: 36px;
+        font-size: 16px;
+        height: 40px;
         left: 0;
         letter-spacing: 0.5px;
         padding: 15px;
@@ -70,6 +64,17 @@
         right: 0;
         top: 0;
         z-index: 1;
+        line-height: 24px;
+    }
+
+    @media (max-width: 320px) {
+        .wc-header {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .wc-close-chat {
+            height: 14px;
+        }
     }
 
     .wc-time {
@@ -89,7 +94,7 @@
         right: 0;
         top: $headerTotalHeight;
         transition: transform $actionTransition;
-        background: #EDEFF1;
+        background: $c_messages_background;
 
         &.no-header {
             top: 0;
@@ -242,14 +247,13 @@
         stroke: none;
         top: 12px;
         width: 6px;
+        display: none;
     }
 
     .wc-message-content {
-        border-radius: 2px;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
-        0 1px 1px 0 rgba(0, 0, 0, .14),
-        0 2px 1px -1px rgba(0, 0, 0, .12);
-        padding: 8px;
+        border-radius: 6px;
+        // box-shadow: 0px 2px 4px 0px rgba(38, 42, 51, 0.2);
+        padding: 16px 20px;
         word-break: break-word;
       }
 
@@ -289,14 +293,14 @@
 
     .wc-card {
 
-        background-color: $c01;
+        // background-color: $c01;
 
         .non-adaptive-content {
             margin: $card_padding $card_padding 0 $card_padding;
         }
 
         button {
-            background-color: transparent;
+            background-color: $c01;
             color: $c_brand;
             min-height: 32px;
             width: 100%;
@@ -304,7 +308,7 @@
         }
 
         button:hover {
-            background-color: transparent;
+            // background-color: transparent;
             border-color: $c_brand;
             color: $c_brand;
         }
@@ -569,8 +573,8 @@
     }
 
     .wc-message-from-bot .wc-message-content {
-        background-color: $c_messageFromThem;
-        color: $c00;
+        background-color: $c16;
+        color: $c_bot_font_color;
     }
 
     .wc-message-from-bot svg.wc-message-callout path {
@@ -588,13 +592,14 @@
 /* console */
 
     .wc-console {
-        border: 5px solid $c_chrome;
+        border-top: 1px solid $c_chrome;
         bottom: 0;
         box-sizing: border-box;
         height: $consoleHeight;
         left: 0;
         position: absolute;
         right: 0;
+        background-color: $c17;
 
         > .wc-upload,
         > .wc-textbox,
@@ -667,15 +672,20 @@
 
             input {
                 background-color: transparent;
+                font-size: 14px;
             }
         }
 
         .wc-mic,
         .wc-send {
-            background-color: transparent;
+            background-color: $c_brand;
+            border-radius: 50%;
             border: 0;
             padding: 0;
             right: 0;
+            height: 36px;
+            width: 36px;
+            margin: 6px 10px;
 
             &.hidden {
                 visibility: hidden;
@@ -683,9 +693,9 @@
         }
 
         .wc-send {
-            svg {
-                height: 18px;
-                width: 27px;
+            img {
+                width: 16px;
+                margin: 10px;
             }
         }
 
@@ -699,6 +709,12 @@
             }
         }
     }
+
+    .wc-console.input-clicked {
+        box-shadow:0 0px 80px 0px rgba(21, 76, 158, 0.3);
+        background-color: $c01;
+    }
+
 
     .wc-console.has-text .wc-send svg {
         fill: $c07;

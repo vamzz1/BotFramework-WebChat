@@ -220,10 +220,8 @@ export class Chat extends React.Component<ChatProps, {}> {
         let header: JSX.Element;
         if (state.format.options.showHeader) header =
             <div className="wc-header">
-            <span className="wc-header-span">Your FREE Credit Report <del>worth Rs.1200</del></span>
-                <br/>
-            <span className="wc-header-subspan">Instant and Absolutely Free!</span>
-                <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-x.png" onClick={() => window.parent.postMessage('close-bot', '*')}/>
+                <p className="wc-header-span">Your Free Credit Report worth Rs.1200<br/><strong>Instant and Absolutely FREE!</strong></p>
+                <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-svg.svg" onClick={() => window.parent.postMessage('close-bot', '*')}/>
             </div>;
 
         let resize: JSX.Element;
