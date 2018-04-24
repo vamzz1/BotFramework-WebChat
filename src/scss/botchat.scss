@@ -189,6 +189,7 @@
 
     .wc-message-pane.show-actions {
         .wc-message-groups {
+            top: $headerTotalHeight + $actionsHeight;
             transform: translateY(-$actionsHeight);
         }
         .wc-suggested-actions {
@@ -663,6 +664,10 @@
 
         .wc-send.hidden {
             visibility: hidden
+        }
+
+        &.has-upload-button .wc-textbox {
+            left: 48px;
         }
 
         .wc-textbox {
