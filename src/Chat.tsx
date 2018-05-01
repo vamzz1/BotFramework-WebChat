@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { findDOMNode } from 'react-dom';
+var Progress = require('react-progressbar').default;
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
@@ -55,6 +56,9 @@ export class Chat extends React.Component<ChatProps, {}> {
     private _saveHistoryRef = this.saveHistoryRef.bind(this);
     private _saveShellRef = this.saveShellRef.bind(this);
 
+    private progressNumerator   = 0;
+    private progressDenominator = 1;
+
     constructor(props: ChatProps) {
         super(props);
 
@@ -96,6 +100,37 @@ export class Chat extends React.Component<ChatProps, {}> {
             Speech.SpeechRecognizer.setSpeechRecognizer(props.speechOptions.speechRecognizer);
             Speech.SpeechSynthesizer.setSpeechSynthesizer(props.speechOptions.speechSynthesizer);
         }
+        this.readLocalStorageForProgress(true)
+    }
+
+    private readLocalStorageForProgress(initialize: Boolean) {
+        setTimeout(() => {
+            if (initialize) {
+                window.localStorage.removeItem('progress')
+            } else {
+                if (window.localStorage.getItem('progress')) {
+                    const updatedProgressString = window.localStorage.getItem('progress')
+                    if (updatedProgressString.length > 0 && updatedProgressString.indexOf('/') !== -1 ) {
+                        var progressParts = updatedProgressString.split('/')
+                        if (progressParts.length === 2) {
+                            if (Number(progressParts[0]) !== NaN && Number(progressParts[1]) !== NaN) {
+                                const progressNumerator   = Number(progressParts[0])
+                                const progressDenominator = Number(progressParts[1])
+                                if (progressNumerator/progressDenominator !== this.progressNumerator/this.progressDenominator) {
+                                    this.progressNumerator   = progressNumerator
+                                    this.progressDenominator = progressDenominator
+                                    this.setState({
+                                        progressNumerator,
+                                        progressDenominator
+                                    })
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            this.readLocalStorageForProgress(false)
+        }, 2000)
     }
 
     private handleIncomingActivity(activity: Activity) {
@@ -267,6 +302,14 @@ export class Chat extends React.Component<ChatProps, {}> {
                 <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-svg.svg" onClick={() => window.parent.postMessage('close-bot', '*')}/>
             </div>;
 
+        let progressbar: JSX.Element;
+        progressbar =
+            <div className="wc-progressbar">
+                <Progress
+                    completed={ this.progressNumerator / this.progressDenominator * 100 }
+                    height={ '14px' }
+                />
+            </div>
         return (
             <Provider store={ this.store }>
                 <div
@@ -274,9 +317,8 @@ export class Chat extends React.Component<ChatProps, {}> {
                     onKeyDownCapture={ this._handleKeyDownCapture }
                     ref={ this._saveChatviewPanelRef }
                 >
-                    {
-                        header
-                    }
+                    { header }
+                    { progressbar }
                     <MessagePane>
                         <History
                             onCardAction={ this._handleCardAction }

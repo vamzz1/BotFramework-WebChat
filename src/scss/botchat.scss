@@ -77,6 +77,13 @@
         }
     }
 
+    .wc-progressbar {
+        position: absolute;
+        width: 100%;
+        top: $headerTotalHeight;
+        height: $progressBarHeight;
+    }
+
     .wc-time {
         color: $c_textLight;
         margin-bottom: 10px;
@@ -92,7 +99,7 @@
         padding: 10px;
         position: absolute;
         right: 0;
-        top: $headerTotalHeight;
+        top: $headerTotalHeight+$progressBarHeight;
         transition: transform $actionTransition;
         background: $c_messages_background;
 

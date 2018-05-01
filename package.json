@@ -39,6 +39,7 @@
     "microsoft-speech-browser-sdk": "0.0.12",
     "react": "15.6.1",
     "react-dom": "15.6.1",
+    "react-progressbar": "^15.4.1",
     "react-redux": "5.0.5",
     "redux": "3.7.2",
     "redux-observable": "0.13.0",
